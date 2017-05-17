@@ -24,17 +24,18 @@ public class WriteToFile {
     
     @SuppressWarnings("deprecation")
     public void writeMessagesToFile(Message[] msgs) {
-        System.out.println("2" );
+        
         FileWriter fw = null;
         BufferedWriter bw = null;
         String filename = "";
         try {
             System.out.println("3" );
             for (int i = 0; i <= msgs.length - 1; i++) {
-                System.out.println("4" );
-                filename = Integer.toString(msgs[i].getReceivedDate().getMonth()) +
-                        Integer.toString(msgs[i].getReceivedDate().getDay()) ;
-                File file = new File("C:\\Users\\Brittany\\Documents\\Receipts\\Receipts_" + filename + ".txt");
+                
+                String month = Integer.toString(msgs[i].getReceivedDate().getMonth() + 1);
+                String day = Integer.toString(msgs[i].getReceivedDate().getDate());               
+                filename = month + "-" + day + "-";
+                File file = new File("C:\\Users\\Brittany\\Documents\\Receipts\\" + filename + ".txt");
                 fw = new FileWriter(file, false);
                 bw = new BufferedWriter(fw);
                 
