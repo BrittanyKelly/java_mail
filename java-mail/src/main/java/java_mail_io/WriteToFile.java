@@ -16,6 +16,6 @@ public class WriteToFile {
     
     public WriteToFile(ArrayList<Message> msgs) {
         
-    }
+    } 
 
 }
